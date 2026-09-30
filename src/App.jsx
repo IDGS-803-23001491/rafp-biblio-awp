@@ -2,9 +2,13 @@ import { useState } from 'react'
 import PWABadge from './PWABadge.jsx'
 import './App.css'
 
-function Galeria({ fotos }) {
-  console.log(fotos)
+function Boton({funcion}){
+  return (
+    <button onClick={funcion}>Cargar</button>
+  )
+}
 
+function Galeria({ fotos }) {
   return (
     <>
       {fotos.map((imagen, index) => (
@@ -40,9 +44,7 @@ function App() {
 
       <Galeria fotos={fotografias} />
 
-      <button onClick={GetFotos}>
-        Cargar
-      </button>
+      <Boton funcion={GetFotos}/>
 
       <PWABadge />
     </>
